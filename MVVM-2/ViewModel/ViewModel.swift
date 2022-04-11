@@ -9,6 +9,8 @@ import Foundation
 
 class ViewModel: TableViewViewModelType {
     
+    private var selectedIndexPath: IndexPath?
+
     var profiles: [Profile] = [
         Profile(name: "Artur", secondName: "Dokhno", age: 29),
         Profile(name: "Julia", secondName: "Dokhno", age: 26)
@@ -21,6 +23,15 @@ class ViewModel: TableViewViewModelType {
     func cellViewModel(forIndexpath indexPath: IndexPath) -> TableViewCellViewModelType? {
         let profile = profiles[indexPath.row]
         return TableViewCellViewModel(profile: profile)
+    }
+    
+    func viewModelForSelectedRow() -> DetailViewModelType? {
+        guard let selectedIndexPath = selectedIndexPath else { return nil }
+        return DetailViewModel(profile: profiles[selectedIndexPath.row])
+    }
+    
+    func selectRow(atIndexPath indexPath: IndexPath) {
+        self.selectedIndexPath = indexPath
     }
     
 }
