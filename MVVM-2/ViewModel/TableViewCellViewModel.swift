@@ -22,4 +22,5 @@ class TableViewCellViewModel: TableViewCellViewModelType {
     init(profile: Profile) {
         self.profile = profile
     }
+    
 }

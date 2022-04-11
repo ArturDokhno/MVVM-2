@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2UY-u6-KX6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sRD-kO-Spk">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20037"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -59,10 +60,63 @@
                             <outlet property="delegate" destination="2UY-u6-KX6" id="ZRE-OF-Fkb"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="xcA-bV-feC"/>
+                    <connections>
+                        <segue destination="XNF-16-Pjr" kind="show" identifier="detailSegue" id="EEc-uQ-rN3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2AE-Hy-Yvc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-161" y="46"/>
+            <point key="canvasLocation" x="639" y="46"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="ZPS-6O-JZV">
+            <objects>
+                <viewController id="XNF-16-Pjr" customClass="DetailViewController" customModule="MVVM_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6ox-KX-VbQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYD-t2-Weg">
+                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="c2i-hW-ExK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JYD-t2-Weg" firstAttribute="centerX" secondItem="6ox-KX-VbQ" secondAttribute="centerX" id="U7n-yC-BYW"/>
+                            <constraint firstItem="JYD-t2-Weg" firstAttribute="centerY" secondItem="6ox-KX-VbQ" secondAttribute="centerY" id="UHW-uT-eYB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jjH-py-Jki"/>
+                    <connections>
+                        <outlet property="textLabel" destination="JYD-t2-Weg" id="F8r-5B-tCH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yum-Lb-HN3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1475" y="46"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qj1-ap-iQj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sRD-kO-Spk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k62-0D-WS7">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2UY-u6-KX6" kind="relationship" relationship="rootViewController" id="e1F-Z9-YsK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lKb-tq-nS9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-162.31884057971016" y="45.535714285714285"/>
         </scene>
     </scenes>
     <resources>
